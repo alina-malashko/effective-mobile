@@ -1,0 +1,28 @@
+@import '../../../../../assets//scss/variables.scss';
+
+.table {
+  width: 100%;
+  &__link {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  &__panel {
+    overflow: hidden;
+    display: flex;
+    &__content {
+      padding: 16px;
+    }
+  }
+  &__row {
+    &:not(.table__row_active):hover {
+      background: $background-grey;
+    }
+    & td {
+      border-bottom-width: 0;
+    }
+    &_expanded {
+      height: 0;
+    }
+  }
+}

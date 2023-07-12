@@ -1,0 +1,19 @@
+<div class="page">
+  <header class="page__header">
+    <app-link-back (click)="navigateToMain()"></app-link-back>
+    <app-logout></app-logout>
+  </header>
+  <main class="page__main">
+    <div *ngIf="!isLoading && !errorMessage" class="page__main__post">
+      <app-post
+        [post]="post"
+      ></app-post>
+    </div>
+    <div *ngIf="isLoading" class="page__main__loader">
+      <app-loader></app-loader>
+    </div>
+    <div *ngIf="!isLoading && errorMessage" class="page__main__error">
+      Oops! Something went wrong, please reload the page
+    </div>
+  </main>
+</div>

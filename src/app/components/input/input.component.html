@@ -1,0 +1,14 @@
+<div class="input">
+  <mat-form-field appearance="outline">
+    <input
+      matInput
+      [placeholder]="placeholder"
+      [type]="type"
+      [(ngModel)]="value"
+      (ngModelChange)="inputChanged($event)"
+    >
+    <mat-hint>
+      <app-input-error>Required field</app-input-error>
+    </mat-hint>
+  </mat-form-field>
+</div>

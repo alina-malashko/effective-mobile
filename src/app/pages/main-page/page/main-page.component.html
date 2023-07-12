@@ -1,0 +1,18 @@
+<div class="page">
+  <header class="page__header">
+    <h1 class="page__header__title">My App</h1>
+    <app-logout></app-logout>
+  </header>
+  <div *ngIf="isLoading" class="page__loader">
+    <app-loader></app-loader>
+  </div>
+  <div *ngIf="!isLoading && errorMessage" class="page__error">
+    Oops! Something went wrong, please reload the page
+  </div>
+  <main *ngIf="!isLoading && !errorMessage" class="page__main">
+    <app-table
+      [posts]="posts"
+      (navigateToPostPage)="navigateToPostPage($event)"
+    ></app-table>
+  </main>
+</div>
